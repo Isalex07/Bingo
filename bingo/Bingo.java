@@ -1,8 +1,16 @@
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
+
+/*
+Random rnd = new Random();
+rnd = ThreadLocalRandom.current()
+rnd.nextInt(unten,oben);*/
+
 package bingo;
 
 import java.util.ArrayList;
@@ -19,9 +27,9 @@ public class Bingo {
      ArrayList Nummern = new ArrayList();
      
      Karte karte = new Karte();
-     ArrayList<int[][]> Speicherkarten = new ArrayList<int[][]>();
+     ArrayList<Karte> Speicherkarten = new ArrayList<>();
      
-     
+
      
     /**
      * @param args the command line arguments
@@ -45,10 +53,12 @@ public class Bingo {
         Ziehungsgeraet ziehungsgeraet;
         for(int i=0;i<Spieleranzahl;i++){
             ziehungsgeraet = new Ziehungsgeraet();
-           Speicherkarten.add(karte.Spielkarte);
+           Speicherkarten.add(karte);
         }
-       Ziehungsgeraet.spielen(Speicherkarten);
+        Speicherkarten.get(0).ausgeben();
+       
         
     }
     
 }
+
